@@ -155,7 +155,7 @@ footer {
   nav { justify-content: center; }
 
   .bg-mark {
-    width: 180vw;
+    width: 200vw;
     transform: translate(-50%, -42%) rotate(-4deg);
     opacity: 0.72;
   }
