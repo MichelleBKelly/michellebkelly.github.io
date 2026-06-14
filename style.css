@@ -23,14 +23,14 @@ body {
 
 .bg-mark {
   position: fixed;
-  left: 65%;
-  top: 30%;
+  left: 72%;
+  top: 20%;
   width: min(125vw, 1300px);
-  height: auto;
+  height: 380vh;
   z-index: 0;
   opacity: 0.98;
   pointer-events: none;
-  transform: translate(-50%, -43%) rotate(-15deg);
+  transform: translate(-50%, -43%) rotate(-20deg);
 }
 
 .bg-mark path {
