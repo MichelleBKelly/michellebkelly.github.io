@@ -148,10 +148,6 @@ h1 {
 
 .label { color: var(--muted); }
 
-footer {
-  align-items: flex-end;
-}
-
 .mini {
   max-width: 340px;
   line-height: 1.45;
