@@ -25,7 +25,7 @@ body {
   position: fixed;
   left: 65%;
   top: 30%;
-  width: min(120vw, 1250px);
+  width: min(125vw, 1300px);
   height: auto;
   z-index: 0;
   opacity: 0.98;
@@ -132,6 +132,16 @@ h1 {
   color: var(--muted);
 }
 
+.more {
+  margin: 24px 0 0;
+  max-width: 520px;
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(15px, 1.55vw, 20px);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+
 .label { color: var(--muted); }
 
 footer {
@@ -155,7 +165,7 @@ footer {
   nav { justify-content: center; }
 
   .bg-mark {
-    width: 200vw;
+    width: 220vw;
     transform: translate(-50%, -42%) rotate(-4deg);
     opacity: 0.72;
   }
@@ -163,4 +173,5 @@ footer {
   h1 {
     font-size: clamp(48px, 17vw, 88px);
   }
+  
 }
