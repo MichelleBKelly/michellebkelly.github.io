@@ -23,42 +23,36 @@ body {
 
 .bg-mark {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  width: min(94vw, 980px);
+  left: 65%;
+  top: 30%;
+  width: min(120vw, 1250px);
   height: auto;
   z-index: 0;
   opacity: 0.98;
   pointer-events: none;
-  transform: translate(-50%, -43%) rotate(-4deg);
+  transform: translate(-50%, -43%) rotate(-15deg);
 }
 
-.bg-mark path,
-.bg-mark circle,
-.bg-mark line {
+.bg-mark path {
   vector-effect: non-scaling-stroke;
 }
 
-/* ── Draw-on animation ── */
 .bg-mark .line1 {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: mk-draw 3s 0.2s forwards ease-in-out;
-}
-.bg-mark .line2 {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: mk-draw 3s 0.6s forwards ease-in-out;
-}
-.bg-mark .line3 {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: mk-draw 3s 1.0s forwards ease-in-out;
-}
-.bg-mark .poly {
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
-  animation: mk-draw 3.5s 0.4s forwards ease-in-out;
+  animation: mk-draw 3s 0.2s forwards ease-in-out;
+}
+
+.bg-mark .line2 {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: mk-draw 3s 0.6s forwards ease-in-out;
+}
+
+.bg-mark .line3 {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: mk-draw 3s 1s forwards ease-in-out;
 }
 
 @keyframes mk-draw {
