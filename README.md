@@ -1,1 +1,1 @@
-Personal linktree
+Personal linktree. Just plain old HTML + CSS
