@@ -73,7 +73,7 @@ header, footer {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
