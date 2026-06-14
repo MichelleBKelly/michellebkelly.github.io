@@ -142,6 +142,10 @@ h1 {
   color: var(--ink);
 }
 
+.more a {
+  color: var(--muted);
+}
+
 .label { color: var(--muted); }
 
 footer {
