@@ -118,8 +118,8 @@ h1 {
   font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
   font-size: clamp(54px, 11vw, 142px);
   line-height: 0.86;
-  letter-spacing: -0.09em;
-  font-weight: 400;
+  letter-spacing: -0.07em;
+  font-weight: 500;
 }
 
 .summary {
