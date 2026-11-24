@@ -19,6 +19,19 @@ html:has(body.listing-page) {
   overflow: hidden;
 }
 
+html:has(body.home-page) {
+  height: 100%;
+  overflow: hidden;
+}
+
+body.home-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 body.listing-page {
   position: fixed;
   inset: 0;
@@ -98,6 +111,11 @@ html.animate-mark .bg-mark .line3 {
 }
 
 .listing-page .page {
+  height: 100dvh;
+  min-height: 0;
+}
+
+.home-page .page {
   height: 100dvh;
   min-height: 0;
 }
@@ -406,15 +424,17 @@ h1 {
   nav { justify-content: center; }
 
   .bg-mark {
-    width: 220vw;
-    transform: translate(-50%, -42%) rotate(-4deg);
-    opacity: 0.72;
+    width: 175vw;
+    height: 150vh;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+    opacity: 0.58;
   }
 
   .listing-main { padding: 2vh 0; }
   .entry { margin-top: 14px; }
-  .entry-title { font-size: 19px; }
-  .entry-description { margin-top: 4px; font-size: 15px; line-height: 1.3; }
+  .entry-title { font-size: 17px; }
+  .entry-description { margin-top: 4px; font-size: 14px; line-height: 1.3; }
   .entry-meta, .entry-stat { margin-top: 5px; font-size: 10px; line-height: 1.3; }
 
   h1 {
