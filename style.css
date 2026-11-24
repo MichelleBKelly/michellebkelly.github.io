@@ -444,7 +444,7 @@ h1 {
   .bg-mark {
     width: 175vw;
     height: 150vh;
-    top: 50%;
+    top: 42%;
     transform: translate(-50%, -50%) rotate(-4deg);
     opacity: 0.58;
   }
