@@ -5,6 +5,9 @@
   --line: rgba(242, 238, 230, 0.16);
   --soft: rgba(242, 238, 230, 0.055);
   --panel: rgba(8, 8, 7, 0.56);
+  --pink: #e5989b;
+  --sage: #a3b18a;
+  --blue: #89a7c2;
 }
 
 * { box-sizing: border-box; }
@@ -37,19 +40,32 @@ body {
   vector-effect: non-scaling-stroke;
 }
 
-.bg-mark .line1 {
+.bg-mark .line1,
+.bg-mark .line2,
+.bg-mark .line3 {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+}
+
+html.animate-mark .bg-mark .line1 {
+  stroke: var(--pink);
+  stroke-opacity: 0.9;
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
   animation: mk-draw 3s 0.2s forwards ease-in-out;
 }
 
-.bg-mark .line2 {
+html.animate-mark .bg-mark .line2 {
+  stroke: var(--sage);
+  stroke-opacity: 0.8;
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
   animation: mk-draw 3s 0.6s forwards ease-in-out;
 }
 
-.bg-mark .line3 {
+html.animate-mark .bg-mark .line3 {
+  stroke: var(--blue);
+  stroke-opacity: 0.7;
   stroke-dasharray: 1500;
   stroke-dashoffset: 1500;
   animation: mk-draw 3s 1s forwards ease-in-out;
@@ -73,7 +89,7 @@ header, footer {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -91,6 +107,29 @@ nav {
   gap: 16px;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+nav a {
+  position: relative;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 1px;
+  background: var(--muted);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 a {
@@ -116,20 +155,64 @@ main {
 h1 {
   margin: 0;
   font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(54px, 11vw, 142px);
-  line-height: 0.86;
-  letter-spacing: -0.07em;
-  font-weight: 400;
+  font-size: clamp(48px, 7vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 500;
 }
 
 .summary {
-  margin: 24px 0 0;
+  margin: 12px 0 0;
   max-width: 520px;
   font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(15px, 1.55vw, 20px);
-  line-height: 1.25;
-  letter-spacing: -0.04em;
+  font-size: clamp(22px, 2.5vw, 26px);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   color: var(--muted);
+}
+
+.doors {
+  margin-top: 42px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.doors a {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.doors a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.doors a:hover::after,
+.doors a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.doors a.projects::after { background: var(--pink); }
+.doors a.ventures::after { background: var(--sage); }
+.doors a.personal::after { background: var(--blue); }
+
+@media (prefers-reduced-motion: reduce) {
+  .doors a::after,
+  nav a::after { transition: none; }
 }
 
 .more {
@@ -143,7 +226,27 @@ h1 {
 }
 
 .more a {
+  position: relative;
   color: var(--muted);
+  text-decoration: none;
+}
+
+.more a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.more a:hover::after,
+.more a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .label { color: var(--muted); }
@@ -153,6 +256,126 @@ h1 {
   line-height: 1.45;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.listing-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  padding: 7vh 0;
+}
+
+.listing {
+  width: min(100%, 520px);
+  text-align: center;
+}
+
+.page-title {
+  margin: 0 0 30px;
+  color: var(--ink);
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.entry {
+  margin-top: 24px;
+}
+
+.entry:first-of-type {
+  margin-top: 0;
+}
+
+.entry-title {
+  position: relative;
+  display: inline-block;
+  color: var(--ink);
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.entry h2 { margin: 0; }
+
+.entry-title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  left: 0;
+  height: 1px;
+  background: var(--entry-accent, var(--pink));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.entry-title:hover::after,
+.entry-title:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.listing--projects { --entry-accent: var(--pink); }
+.listing--ventures { --entry-accent: var(--sage); }
+
+.entry-description {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.entry-meta,
+.entry-stat {
+  margin: 8px 0 0;
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.entry-meta { color: var(--muted); }
+.entry-stat { color: var(--ink); }
+
+.listing-nav {
+  margin-top: 38px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.listing-nav a {
+  position: relative;
+  text-decoration: none;
+}
+
+.listing-nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.listing-nav a:hover::after,
+.listing-nav a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 @media (max-width: 680px) {
@@ -170,8 +393,16 @@ h1 {
     opacity: 0.72;
   }
 
+  .listing-main { padding: 5vh 0; }
+  .entry { margin-top: 22px; }
+
   h1 {
-    font-size: clamp(48px, 17vw, 88px);
+    font-size: 48px;
   }
-  
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-title::after,
+  .listing-nav a::after { transition: none; }
 }
